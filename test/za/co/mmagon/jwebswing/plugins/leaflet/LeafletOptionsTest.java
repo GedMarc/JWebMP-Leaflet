@@ -1,4 +1,4 @@
-package za.co.mmagon.jwebswing.plugins.bootstraptagsinput;
+package za.co.mmagon.jwebswing.plugins.leaflet;
 
 import org.junit.Test;
 import za.co.mmagon.jwebswing.plugins.leaflet.LeafletOptions;

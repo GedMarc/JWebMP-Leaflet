@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package za.co.mmagon.jwebswing.plugins.bootstraptagsinput;
+package za.co.mmagon.jwebswing.plugins.leaflet;
 
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
@@ -23,9 +23,9 @@ public class LeafletFeatureTest extends BaseTestClass
     @Test
     public void testSomeMethod()
     {
-        LeafletFeature bsf = new LeafletFeature(getInstance().getBody());
-        bsf.getOptions().setBoxZoom(true);
-        System.out.println(bsf.renderJavascript());
+        LeafletFeature leafletFeature = new LeafletFeature(getInstance().getBody());
+        leafletFeature.getOptions().setBoxZoom(true);
+        System.out.println(leafletFeature.renderJavascript());
     }
 
 }
