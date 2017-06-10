@@ -9,8 +9,6 @@ import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.generics.LatitudeLongitueArray;
-import za.co.mmagon.jwebswing.plugins.bootstrap.forms.BSForm;
-import za.co.mmagon.jwebswing.plugins.leaflet.Leaflet;
 
 /**
  *
@@ -51,11 +49,9 @@ public class LeafletTest extends BaseTestClass
     public void testHtml()
     {
         Page p = getInstance();
-        BSForm form = new BSForm();
         Leaflet bs = new Leaflet();
         p.getOptions().setDynamicRender(false);
-        p.getBody().add(form);
-        form.add(bs);
+        p.getBody().add(bs);
         System.out.println(p.toString(true));
     }
 }

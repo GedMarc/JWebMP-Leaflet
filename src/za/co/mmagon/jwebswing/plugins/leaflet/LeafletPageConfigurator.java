@@ -3,7 +3,6 @@ package za.co.mmagon.jwebswing.plugins.leaflet;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
-import za.co.mmagon.jwebswing.plugins.bootstrap.BootstrapPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 
 /**
@@ -45,7 +44,6 @@ class LeafletPageConfigurator extends PageConfigurator
         if (!page.isConfigured())
         {
             JQueryPageConfigurator.setRequired(page.getBody(), true);
-            BootstrapPageConfigurator.setBootstrapRequired(page.getBody(), true);
             page.getBody().addJavaScriptReference(LeafletReferencePool.LeafletJS.getJavaScriptReference());
             page.getBody().addCssReference(LeafletReferencePool.LeafletJS.getCssReference());
         }
