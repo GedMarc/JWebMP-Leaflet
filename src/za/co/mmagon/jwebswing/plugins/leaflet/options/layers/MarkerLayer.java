@@ -9,13 +9,13 @@ package za.co.mmagon.jwebswing.plugins.leaflet.options.layers;
 public class MarkerLayer extends InteractiveLayer<MarkerLayer>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /*
-     * Constructs a new MarkerLayer
-     */
-    public MarkerLayer()
-    {
-        //Nothing needed
-    }
+	/*
+	 * Constructs a new MarkerLayer
+	 */
+	public MarkerLayer()
+	{
+		//Nothing needed
+	}
 }

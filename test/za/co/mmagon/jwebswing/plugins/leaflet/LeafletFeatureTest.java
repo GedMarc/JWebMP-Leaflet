@@ -7,25 +7,23 @@ package za.co.mmagon.jwebswing.plugins.leaflet;
 
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.plugins.leaflet.LeafletFeature;
 
 /**
- *
  * @author Marc Magon
  */
 public class LeafletFeatureTest extends BaseTestClass
 {
 
-    public LeafletFeatureTest()
-    {
-    }
+	public LeafletFeatureTest()
+	{
+	}
 
-    @Test
-    public void testSomeMethod()
-    {
-        LeafletFeature leafletFeature = new LeafletFeature(getInstance().getBody());
-        leafletFeature.getOptions().setBoxZoom(true);
-        System.out.println(leafletFeature.renderJavascript());
-    }
+	@Test
+	public void testSomeMethod()
+	{
+		LeafletFeature leafletFeature = new LeafletFeature(getInstance().getBody());
+		leafletFeature.getOptions().setBoxZoom(true);
+		System.out.println(leafletFeature.renderJavascript());
+	}
 
 }

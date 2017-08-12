@@ -12,13 +12,13 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 public class CRS extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /*
-     * Constructs a new CRS
-     */
-    public CRS()
-    {
-        //Nothing needed
-    }
+	/*
+	 * Constructs a new CRS
+	 */
+	public CRS()
+	{
+		//Nothing needed
+	}
 }

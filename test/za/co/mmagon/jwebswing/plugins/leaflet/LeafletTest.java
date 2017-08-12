@@ -11,47 +11,46 @@ import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.generics.LatitudeLongitueArray;
 
 /**
- *
  * @author Marc Magon
  */
 public class LeafletTest extends BaseTestClass
 {
 
-    public LeafletTest()
-    {
-    }
+	public LeafletTest()
+	{
+	}
 
-    @Test
-    public void testSomeMethod()
-    {
-        Leaflet leaflet = new Leaflet();
-        leaflet.getOptions().setCenter(new LatitudeLongitueArray(51.505, -0.09));
-        leaflet.getOptions().setDragging(true);
-        System.out.println(leaflet.toString(true));
-    }
+	@Test
+	public void testSomeMethod()
+	{
+		Leaflet leaflet = new Leaflet();
+		leaflet.getOptions().setCenter(new LatitudeLongitueArray(51.505, -0.09));
+		leaflet.getOptions().setDragging(true);
+		System.out.println(leaflet.toString(true));
+	}
 
-    @Test
-    public void testSomeMethod2()
-    {
-        Leaflet bs = new Leaflet();
-        bs.getOptions().setEaseLinearity(8);
-        System.out.println(bs.renderJavascript());
-    }
+	@Test
+	public void testSomeMethod2()
+	{
+		Leaflet bs = new Leaflet();
+		bs.getOptions().setEaseLinearity(8);
+		System.out.println(bs.renderJavascript());
+	}
 
-    @Test
-    public void testJavaScript()
-    {
-        Leaflet bs = new Leaflet();
-        System.out.println(bs.renderJavascript());
-    }
+	@Test
+	public void testJavaScript()
+	{
+		Leaflet bs = new Leaflet();
+		System.out.println(bs.renderJavascript());
+	}
 
-    @Test
-    public void testHtml()
-    {
-        Page p = getInstance();
-        Leaflet bs = new Leaflet();
-        p.getOptions().setDynamicRender(false);
-        p.getBody().add(bs);
-        System.out.println(p.toString(true));
-    }
+	@Test
+	public void testHtml()
+	{
+		Page p = getInstance();
+		Leaflet bs = new Leaflet();
+		p.getOptions().setDynamicRender(false);
+		p.getBody().add(bs);
+		System.out.println(p.toString(true));
+	}
 }
