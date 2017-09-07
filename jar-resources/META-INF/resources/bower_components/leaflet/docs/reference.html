@@ -5481,7 +5481,7 @@ map.off('click', onClick);</code></pre>
 <p>In addition to implementing a simple classical inheritance model, it introduces several special properties for
     convenient code organization &mdash; <code>options</code>, <code>includes</code> and <code>statics</code>.</p>
 
-<pre><code>var MyClass = L.Class.extend({
+<pre><code>var entityClass = L.Class.extend({
 	initialize: function (greeter) {
 		this.greeter = greeter;
 		// class constructor
@@ -5492,15 +5492,15 @@ map.off('click', onClick);</code></pre>
 	}
 });
 
-// create instance of MyClass, passing "Hello" to the constructor
-var a = new MyClass("Hello");
+// create instance of entityClass, passing "Hello" to the constructor
+var a = new entityClass("Hello");
 
 // call greet method, alerting "Hello, World"
 a.greet("World");
 </code></pre>
 
 <p>The <code>initialize</code> method is your class's constructor function, meaning that it gets called when you do
-    <code>new MyClass(...)</code>.</p>
+    <code>new entityClass(...)</code>.</p>
 
 
 <h3>Class Factories</h3>
@@ -5523,7 +5523,7 @@ L.map('map');</code></pre>
 <p>You use <code>L.Class.extend</code> to define new classes, but you can use the same method on any class to inherit
     from it:</p>
 
-<pre><code>var MyChildClass = MyClass.extend({
+<pre><code>var MyChildClass = entityClass.extend({
 	// ... new properties and methods
 });</code></pre>
 
@@ -5533,20 +5533,20 @@ L.map('map');</code></pre>
 
 <pre><code>var a = new MyChildClass();
 a instanceof MyChildClass; // true
-a instanceof MyClass; // true
+a instanceof entityClass; // true
 </code></pre>
 
 <p>You can call parent methods (including constructor) from corresponding child ones (as you do with <code>super</code>
     calls in other languages) by accessing parent class prototype and using JavaScript's <code>call</code> or <code>apply</code>:
 </p>
 
-<pre><code>var MyChildClass = MyClass.extend({
+<pre><code>var MyChildClass = entityClass.extend({
 	initialize: function () {
-		MyClass.prototype.initialize.call(this, "Yo");
+		entityClass.prototype.initialize.call(this, "Yo");
 	},
 
 	greet: function (name) {
-		MyClass.prototype.greet.call(this, 'bro ' + name + '!');
+		entityClass.prototype.greet.call(this, 'bro ' + name + '!');
 	}
 });
 
@@ -5559,14 +5559,14 @@ a.greet('Jason'); // alerts "Yo, bro Jason!"</code></pre>
     merged with the parent one instead of overriding it completely, which makes managing configuration of objects and
     default values convenient:</p>
 
-<pre><code>var MyClass = L.Class.extend({
+<pre><code>var entityClass = L.Class.extend({
 	options: {
 		myOption1: 'foo',
 		myOption2: 'bar'
 	}
 });
 
-var MyChildClass = MyClass.extend({
+var MyChildClass = entityClass.extend({
 	options: {
 		myOption1: 'baz',
 		myOption3: 5
@@ -5581,7 +5581,7 @@ a.options.myOption3; // 5</code></pre>
 <p>There's also <code>L.Util.setOptions</code>, a method for conveniently merging options passed to constructor with the
     defaults defined in the class:</p>
 
-<pre><code>var MyClass = L.Class.extend({
+<pre><code>var entityClass = L.Class.extend({
 	options: {
 		foo: 'bar',
 		bla: 5
@@ -5593,7 +5593,7 @@ a.options.myOption3; // 5</code></pre>
 	}
 });
 
-var a = new MyClass({bla: 10});
+var a = new entityClass({bla: 10});
 a.options; // {foo: 'bar', bla: 10}</code></pre>
 
 <h3>Includes</h3>
@@ -5607,30 +5607,30 @@ a.options; // {foo: 'bar', bla: 10}</code></pre>
 	bar: 5
 };
 
-var MyClass = L.Class.extend({
+var entityClass = L.Class.extend({
 	includes: MyMixin
 });
 
-var a = new MyClass();
+var a = new entityClass();
 a.foo();</code></pre>
 
 <p>You can also do such includes in runtime with the <code>include</code> method:</p>
 
-<pre><code><b>MyClass.include</b>(MyMixin);</code></pre>
+<pre><code><b>entityClass.include</b>(MyMixin);</code></pre>
 
 <h3>Statics</h3>
 
 <p><code>statics</code> is just a convenience property that injects specified object properties as the static properties
     of the class, useful for defining constants:</p>
 
-<pre><code>var MyClass = L.Class.extend({
+<pre><code>var entityClass = L.Class.extend({
 	statics: {
 		FOO: 'bar',
 		BLA: 5
 	}
 });
 
-MyClass.FOO; // 'bar'</code></pre>
+entityClass.FOO; // 'bar'</code></pre>
 
 
 <h3>Constructor Hooks</h3>
@@ -5639,14 +5639,14 @@ MyClass.FOO; // 'bar'</code></pre>
     hooks for <code>L.Polyline</code>). Leaflet comes with a way to do it easily using the <code>addInitHook</code>
     method:</p>
 
-<pre><code>MyClass.addInitHook(function () {
+<pre><code>entityClass.addInitHook(function () {
 	// ... do something in constructor additionally
 	// e.g. add event listeners, set custom properties etc.
 });</code></pre>
 
 <p>You can also use the following shortcut when you just need to make one additional method call:</p>
 
-<pre><code>MyClass.addInitHook('methodName', arg1, arg2, &hellip;);</code></pre>
+<pre><code>entityClass.addInitHook('methodName', arg1, arg2, &hellip;);</code></pre>
 
 
 <h2 id="browser">Browser</h2>
