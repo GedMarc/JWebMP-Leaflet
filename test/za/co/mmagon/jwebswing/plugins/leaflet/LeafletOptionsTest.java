@@ -7,11 +7,11 @@ import org.junit.Test;
  */
 public class LeafletOptionsTest
 {
-
+	
 	public LeafletOptionsTest()
 	{
 	}
-
+	
 	@Test
 	public void testSomeMethod()
 	{
@@ -19,5 +19,5 @@ public class LeafletOptionsTest
 		bso.setDragging(true);
 		System.out.println(bso);
 	}
-
+	
 }

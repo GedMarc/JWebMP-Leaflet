@@ -30,7 +30,7 @@
     {% endif %}
 </head>
 <body
-{% if page.bodyclass %} class="{{ page.bodyclass }}"{% endif %}>
+        {% if page.bodyclass %} class="{{ page.bodyclass }}" {% endif %}>
 
 {% unless page.customMapContainer == "true" %}
 <div id='map'></div>

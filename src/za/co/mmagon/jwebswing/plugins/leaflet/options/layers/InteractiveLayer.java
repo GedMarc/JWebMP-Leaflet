@@ -15,13 +15,13 @@ import za.co.mmagon.jwebswing.plugins.leaflet.options.Layer;
  */
 public class InteractiveLayer<J extends InteractiveLayer> extends Layer<J>
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 */
 	private Boolean interactive;
-
+	
 	/*
 	 * Constructs a new InteractiveLayer
 	 */
@@ -29,7 +29,7 @@ public class InteractiveLayer<J extends InteractiveLayer> extends Layer<J>
 	{
 		//Nothing needed
 	}
-
+	
 	/**
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 *
@@ -39,7 +39,7 @@ public class InteractiveLayer<J extends InteractiveLayer> extends Layer<J>
 	{
 		return interactive;
 	}
-
+	
 	/**
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 *
@@ -52,5 +52,5 @@ public class InteractiveLayer<J extends InteractiveLayer> extends Layer<J>
 		this.interactive = interactive;
 		return (J) this;
 	}
-
+	
 }
