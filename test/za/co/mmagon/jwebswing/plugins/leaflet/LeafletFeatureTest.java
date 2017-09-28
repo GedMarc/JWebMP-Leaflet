@@ -5,7 +5,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.leaflet;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 
 /**
