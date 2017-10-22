@@ -24,15 +24,7 @@ public enum LeafletInputSize
 	/**
 	 * A new BootstrapTagsInputSize
 	 */
-	private LeafletInputSize()
-	{
-
-	}
-
-	/**
-	 * A new BootstrapTagsInputSize with data
-	 */
-	private LeafletInputSize(String data)
+	LeafletInputSize()
 	{
 
 	}

@@ -30,14 +30,6 @@ enum LeafletReferencePool implements ReferencePool
 
 	}
 
-	/**
-	 * A new AngularSlimScrollReferencePool with data
-	 */
-	LeafletReferencePool(String data)
-	{
-
-	}
-	
 	LeafletReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
