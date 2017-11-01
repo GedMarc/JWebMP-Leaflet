@@ -23,7 +23,7 @@ public class LeafletFeature extends Feature<LeafletOptions, LeafletFeature>
 		component.addVariable("map_" + getID());
 	}
 
-	//@TODO THIS
+
 	@Override
 	protected void assignFunctionsToComponent()
 	{
