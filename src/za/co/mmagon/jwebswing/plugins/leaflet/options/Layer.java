@@ -45,6 +45,7 @@ public abstract class Layer<J extends Layer> extends JavaScriptPart
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public J setAttribution(String attribution)
 	{
 		this.attribution = attribution;

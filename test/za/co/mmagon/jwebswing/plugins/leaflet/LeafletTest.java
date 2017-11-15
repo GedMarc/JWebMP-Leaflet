@@ -45,6 +45,7 @@ public class LeafletTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testHtml()
 	{
 		Page p = getInstance();
