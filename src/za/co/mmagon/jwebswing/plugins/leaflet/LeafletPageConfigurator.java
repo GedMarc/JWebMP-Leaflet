@@ -42,7 +42,7 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 	{
 		if (!page.isConfigured())
 		{
-			JQueryPageConfigurator.setRequired(page.getBody(), true);
+			JQueryPageConfigurator.setRequired(true);
 			page.getBody().addJavaScriptReference(LeafletReferencePool.LeafletJS.getJavaScriptReference());
 			page.getBody().addCssReference(LeafletReferencePool.LeafletJS.getCssReference());
 		}

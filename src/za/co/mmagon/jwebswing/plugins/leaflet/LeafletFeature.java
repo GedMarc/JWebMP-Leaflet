@@ -3,6 +3,8 @@ package za.co.mmagon.jwebswing.plugins.leaflet;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Creates the leaflet JavaScripts required for options via the options tag
  *
@@ -27,7 +29,7 @@ public class LeafletFeature extends Feature<LeafletOptions, LeafletFeature>
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery("map_" + getComponent().getID() + " = L.map(" + getOptions() + ");" + getNewLine());
+		addQuery("map_" + getComponent().getID() + " = L.map(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	/**
