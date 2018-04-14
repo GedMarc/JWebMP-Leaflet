@@ -1,9 +1,9 @@
-package za.co.mmagon.jwebswing.plugins.leaflet.options;
+package com.jwebmp.plugins.leaflet.options;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonValue;
-import za.co.mmagon.jwebswing.generics.LatitudeLongitueArray;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.generics.LatitudeLongitueArray;
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +14,15 @@ import java.util.List;
  */
 public class LatitudeLongitudeBounds extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted otherwise), so the bounds example above can be passed like this:
 	 */
 	@JsonIgnore
 	private List<LatitudeLongitueArray> rectangleBounds;
-	
+
 	/*
 	 * Constructs a new LatitudeLongitudeBounds
 	 */
@@ -30,7 +30,7 @@ public class LatitudeLongitudeBounds extends JavaScriptPart
 	{
 		//Nothing needed
 	}
-	
+
 	/**
 	 * Represents a rectangular geographical area on a map Max 2.
 	 * <p>
@@ -47,7 +47,7 @@ public class LatitudeLongitudeBounds extends JavaScriptPart
 		}
 		return rectangleBounds;
 	}
-	
+
 	/**
 	 * Represents a rectangular geographical area on a ma Max 2. All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted otherwise), so the bounds
 	 * example above can be passed like this:
@@ -61,5 +61,5 @@ public class LatitudeLongitudeBounds extends JavaScriptPart
 		this.rectangleBounds = rectangleBounds;
 		return this;
 	}
-	
+
 }

@@ -1,9 +1,9 @@
-package za.co.mmagon.jwebswing.plugins.leaflet;
+package com.jwebmp.plugins.leaflet;
 
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.plugins.PluginInformation;
-import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.Page;
+import com.jwebmp.PageConfigurator;
+import com.jwebmp.plugins.PluginInformation;
+import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
 
 /**
  * Configures the Bootstrap Page Configurator
@@ -23,8 +23,8 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 		pluginIconUrl = "",
 		pluginIconImageUrl = "",
 		pluginOriginalHomepage = "http://leafletjs.com/index.html",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/Leaflet.jar/download"
-) class LeafletPageConfigurator extends PageConfigurator
+		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/Leaflet.jar/download") class LeafletPageConfigurator
+		extends PageConfigurator
 {
 
 	private static final long serialVersionUID = 1L;
@@ -43,8 +43,10 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 		if (!page.isConfigured())
 		{
 			JQueryPageConfigurator.setRequired(true);
-			page.getBody().addJavaScriptReference(LeafletReferencePool.LeafletJS.getJavaScriptReference());
-			page.getBody().addCssReference(LeafletReferencePool.LeafletJS.getCssReference());
+			page.getBody()
+			    .addJavaScriptReference(LeafletReferencePool.LeafletJS.getJavaScriptReference());
+			page.getBody()
+			    .addCssReference(LeafletReferencePool.LeafletJS.getCssReference());
 		}
 		return page;
 	}

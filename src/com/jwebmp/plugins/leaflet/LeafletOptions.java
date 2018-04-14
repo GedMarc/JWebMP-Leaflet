@@ -1,10 +1,27 @@
-package za.co.mmagon.jwebswing.plugins.leaflet;
+/*
+ * Copyright (C) 2017 Marc Magon
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-import za.co.mmagon.jwebswing.generics.LatitudeLongitueArray;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.plugins.leaflet.options.CRS;
-import za.co.mmagon.jwebswing.plugins.leaflet.options.LatitudeLongitudeBounds;
-import za.co.mmagon.jwebswing.plugins.leaflet.options.Layer;
+package com.jwebmp.plugins.leaflet;
+
+import com.jwebmp.generics.LatitudeLongitueArray;
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.plugins.leaflet.options.CRS;
+import com.jwebmp.plugins.leaflet.options.LatitudeLongitudeBounds;
+import com.jwebmp.plugins.leaflet.options.Layer;
 
 /**
  * The central class of the API — it is used to create a map on a page and manipulate it.
@@ -12,11 +29,12 @@ import za.co.mmagon.jwebswing.plugins.leaflet.options.Layer;
  * @author Marc Magon
  * @since 09 Jun 2017
  */
-public class LeafletOptions extends JavaScriptPart
+public class LeafletOptions
+		extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Whether Paths should be rendered on a Canvas renderer. By default, all Paths are rendered in a SVG renderer.*
 	 */
@@ -34,12 +52,14 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Boolean closePopupOnClick;
 	/**
-	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer; lower values (e.g.
+	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer;
+	 * lower values (e.g.
 	 * 0.5 or 0.1) allow for greater granularity. A value of 0 means the zoom level will not be snapped after fitBounds or a pinch-zoom.*
 	 */
 	private Integer zoomSnap;
 	/**
-	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5) allow for greater
+	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5)
+	 * allow for greater
 	 * granularity.*
 	 */
 	private Integer zoomDelta;
@@ -52,7 +72,8 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Boolean boxZoom;
 	/**
-	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the center of the view
+	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the
+	 * center of the view
 	 * regardless of where the mouse was.*
 	 */
 	private Boolean doubleClickZoom;
@@ -85,7 +106,8 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Layer[] layers;
 	/**
-	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the restriction dynamically, use
+	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the
+	 * restriction dynamically, use
 	 * setMaxBounds method.*
 	 */
 	private LatitudeLongitudeBounds maxBounds;
@@ -102,16 +124,19 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Boolean fadeAnimation;
 	/**
-	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that support CSS3
+	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that
+	 * support CSS3
 	 * Transitions except Android.*
 	 */
 	private Boolean markerZoomAnimation;
 	/**
-	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large panBy.*
+	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large
+	 * panBy.*
 	 */
 	private Integer transform3DLimit;
 	/**
-	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels especially nice on touch
+	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels
+	 * especially nice on touch
 	 * devices. Enabled by default unless running on old Android devices.*
 	 */
 	private Boolean inertia;
@@ -128,12 +153,14 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Integer easeLinearity;
 	/**
-	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector layers are still
+	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector
+	 * layers are still
 	 * visible.*
 	 */
 	private Boolean worldCopyJump;
 	/**
-	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at normal speed, higher
+	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at
+	 * normal speed, higher
 	 * values will slow down map dragging outside bounds, and 1.0 makes the bounds fully solid, preventing the user from dragging outside the bounds.*
 	 */
 	private Integer maxBoundsViscosity;
@@ -166,7 +193,8 @@ public class LeafletOptions extends JavaScriptPart
 	 */
 	private Integer tapTolerance;
 	/**
-	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers) were. Enabled for
+	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers)
+	 * were. Enabled for
 	 * touch-capable web browsers except for old Androids.*
 	 */
 	private Boolean touchZoom;
@@ -174,7 +202,7 @@ public class LeafletOptions extends JavaScriptPart
 	 * Set it to false if you don't want the map to zoom beyond min/max zoom and then bounce back when pinch-zooming.*
 	 */
 	private Boolean bounceAtZoomLimits;
-	
+
 	/**
 	 * Constructs a new leaflet options
 	 */
@@ -182,7 +210,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		//Nothing needed here
 	}
-	
+
 	/**
 	 * Whether Paths should be rendered on a Canvas renderer. By default, all Paths are rendered in a SVG renderer.
 	 *
@@ -192,7 +220,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return preferCanvas;
 	}
-	
+
 	/**
 	 * Whether Paths should be rendered on a Canvas renderer. By default, all Paths are rendered in a SVG renderer.
 	 *
@@ -205,7 +233,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.preferCanvas = preferCanvas;
 		return this;
 	}
-	
+
 	/**
 	 * Whether a attribution control is added to the map by default.
 	 *
@@ -215,7 +243,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return attributionControl;
 	}
-	
+
 	/**
 	 * Whether a attribution control is added to the map by default.
 	 *
@@ -228,7 +256,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.attributionControl = attributionControl;
 		return this;
 	}
-	
+
 	/**
 	 * Whether a zoom control is added to the map by default.
 	 *
@@ -238,7 +266,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoomControl;
 	}
-	
+
 	/**
 	 * Whether a zoom control is added to the map by default.
 	 *
@@ -251,7 +279,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoomControl = zoomControl;
 		return this;
 	}
-	
+
 	/**
 	 * Set it to false if you don't want popups to close when user clicks the map.
 	 *
@@ -261,7 +289,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return closePopupOnClick;
 	}
-	
+
 	/**
 	 * Set it to false if you don't want popups to close when user clicks the map.
 	 *
@@ -274,9 +302,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.closePopupOnClick = closePopupOnClick;
 		return this;
 	}
-	
+
 	/**
-	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer; lower values (e.g.
+	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer;
+	 * lower values (e.g.
 	 * 0.5 or 0.1) allow for greater granularity. A value of 0 means the zoom level will not be snapped after fitBounds or a pinch-zoom.
 	 *
 	 * @return
@@ -285,9 +314,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoomSnap;
 	}
-	
+
 	/**
-	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer; lower values (e.g.
+	 * Forces the map's zoom level to always be a multiple of this, particularly right after a fitBounds() or a pinch-zoom. By default, the zoom level snaps to the nearest integer;
+	 * lower values (e.g.
 	 * 0.5 or 0.1) allow for greater granularity. A value of 0 means the zoom level will not be snapped after fitBounds or a pinch-zoom.
 	 *
 	 * @param zoomSnap
@@ -299,9 +329,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoomSnap = zoomSnap;
 		return this;
 	}
-	
+
 	/**
-	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5) allow for greater
+	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5)
+	 * allow for greater
 	 * granularity.
 	 *
 	 * @return
@@ -310,9 +341,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoomDelta;
 	}
-	
+
 	/**
-	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5) allow for greater
+	 * Controls how much the map's zoom level will change after a zoomIn(), zoomOut(), pressing + or - on the keyboard, or using the zoom controls. Values smaller than 1 (e.g. 0.5)
+	 * allow for greater
 	 * granularity.
 	 *
 	 * @param zoomDelta
@@ -324,7 +356,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoomDelta = zoomDelta;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the map automatically handles browser window resize to update itself.
 	 *
@@ -334,7 +366,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return trackResize;
 	}
-	
+
 	/**
 	 * Whether the map automatically handles browser window resize to update itself.
 	 *
@@ -347,7 +379,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.trackResize = trackResize;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing the shift key.
 	 *
@@ -357,7 +389,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return boxZoom;
 	}
-	
+
 	/**
 	 * Whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing the shift key.
 	 *
@@ -370,9 +402,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.boxZoom = boxZoom;
 		return this;
 	}
-	
+
 	/**
-	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the center of the view
+	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the
+	 * center of the view
 	 * regardless of where the mouse was.
 	 *
 	 * @return
@@ -381,9 +414,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return doubleClickZoom;
 	}
-	
+
 	/**
-	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the center of the view
+	 * Whether the map can be zoomed in by double clicking on it and zoomed out by double clicking while holding shift. If passed 'center', double-click zoom will zoom to the
+	 * center of the view
 	 * regardless of where the mouse was.
 	 *
 	 * @param doubleClickZoom
@@ -395,7 +429,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.doubleClickZoom = doubleClickZoom;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the map be draggable with mouse/touch or not.
 	 *
@@ -405,7 +439,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return dragging;
 	}
-	
+
 	/**
 	 * Whether the map be draggable with mouse/touch or not.
 	 *
@@ -418,7 +452,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.dragging = dragging;
 		return this;
 	}
-	
+
 	/**
 	 * The Coordinate Reference System to use. Don't change this if you're not sure what it means.
 	 *
@@ -428,7 +462,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return crs;
 	}
-	
+
 	/**
 	 * The Coordinate Reference System to use. Don't change this if you're not sure what it means.
 	 *
@@ -441,7 +475,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.crs = crs;
 		return this;
 	}
-	
+
 	/**
 	 * Initial geographic center of the map
 	 *
@@ -451,7 +485,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return center;
 	}
-	
+
 	/**
 	 * Initial geographic center of the map
 	 *
@@ -464,7 +498,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.center = center;
 		return this;
 	}
-	
+
 	/**
 	 * Initial map zoom level
 	 *
@@ -474,7 +508,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoom;
 	}
-	
+
 	/**
 	 * Initial map zoom level
 	 *
@@ -487,7 +521,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoom = zoom;
 		return this;
 	}
-	
+
 	/**
 	 * Minimum zoom level of the map. Overrides any minZoom option set on map layers.
 	 *
@@ -497,7 +531,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return minZoom;
 	}
-	
+
 	/**
 	 * Minimum zoom level of the map. Overrides any minZoom option set on map layers.
 	 *
@@ -510,7 +544,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.minZoom = minZoom;
 		return this;
 	}
-	
+
 	/**
 	 * Maximum zoom level of the map. Overrides any maxZoom option set on map layers.
 	 *
@@ -520,7 +554,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return maxZoom;
 	}
-	
+
 	/**
 	 * Maximum zoom level of the map. Overrides any maxZoom option set on map layers.
 	 *
@@ -533,7 +567,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.maxZoom = maxZoom;
 		return this;
 	}
-	
+
 	/**
 	 * Array of layers that will be added to the map initially
 	 *
@@ -543,7 +577,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return layers;
 	}
-	
+
 	/**
 	 * Array of layers that will be added to the map initially
 	 *
@@ -556,9 +590,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.layers = layers;
 		return this;
 	}
-	
+
 	/**
-	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the restriction dynamically, use
+	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the
+	 * restriction dynamically, use
 	 * setMaxBounds method.
 	 *
 	 * @return
@@ -567,9 +602,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return maxBounds;
 	}
-	
+
 	/**
-	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the restriction dynamically, use
+	 * When this option is set, the map restricts the view to the given geographical bounds, bouncing the user back if the user tries to pan outside the view. To set the
+	 * restriction dynamically, use
 	 * setMaxBounds method.
 	 *
 	 * @param maxBounds
@@ -581,7 +617,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.maxBounds = maxBounds;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the map zoom animation is enabled. By default it's enabled in all browsers that support CSS3 Transitions except Android.
 	 *
@@ -591,7 +627,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoomAnimation;
 	}
-	
+
 	/**
 	 * Whether the map zoom animation is enabled. By default it's enabled in all browsers that support CSS3 Transitions except Android.
 	 *
@@ -604,7 +640,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoomAnimation = zoomAnimation;
 		return this;
 	}
-	
+
 	/**
 	 * Won't animate zoom if the zoom difference exceeds this value.
 	 *
@@ -614,7 +650,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return zoomAnimationThreshold;
 	}
-	
+
 	/**
 	 * Won't animate zoom if the zoom difference exceeds this value.
 	 *
@@ -627,7 +663,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.zoomAnimationThreshold = zoomAnimationThreshold;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the tile fade animation is enabled. By default it's enabled in all browsers that support CSS3 Transitions except Android.
 	 *
@@ -637,7 +673,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return fadeAnimation;
 	}
-	
+
 	/**
 	 * Whether the tile fade animation is enabled. By default it's enabled in all browsers that support CSS3 Transitions except Android.
 	 *
@@ -650,9 +686,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.fadeAnimation = fadeAnimation;
 		return this;
 	}
-	
+
 	/**
-	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that support CSS3
+	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that
+	 * support CSS3
 	 * Transitions except Android.
 	 *
 	 * @return
@@ -661,9 +698,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return markerZoomAnimation;
 	}
-	
+
 	/**
-	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that support CSS3
+	 * Whether markers animate their zoom with the zoom animation, if disabled they will disappear for the length of the animation. By default it's enabled in all browsers that
+	 * support CSS3
 	 * Transitions except Android.
 	 *
 	 * @param markerZoomAnimation
@@ -675,9 +713,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.markerZoomAnimation = markerZoomAnimation;
 		return this;
 	}
-	
+
 	/**
-	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large panBy.
+	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large
+	 * panBy.
 	 *
 	 * @return
 	 */
@@ -685,9 +724,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return transform3DLimit;
 	}
-	
+
 	/**
-	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large panBy.
+	 * Defines the maximum size of a CSS translation transform. The default value should not be changed unless a web browser positions layers in the wrong place after doing a large
+	 * panBy.
 	 *
 	 * @param transform3DLimit
 	 *
@@ -698,9 +738,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.transform3DLimit = transform3DLimit;
 		return this;
 	}
-	
+
 	/**
-	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels especially nice on touch
+	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels
+	 * especially nice on touch
 	 * devices. Enabled by default unless running on old Android devices.
 	 *
 	 * @return
@@ -709,9 +750,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return inertia;
 	}
-	
+
 	/**
-	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels especially nice on touch
+	 * If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels
+	 * especially nice on touch
 	 * devices. Enabled by default unless running on old Android devices.
 	 *
 	 * @param inertia
@@ -723,7 +765,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.inertia = inertia;
 		return this;
 	}
-	
+
 	/**
 	 * The rate with which the inertial movement slows down, in pixels/second².
 	 *
@@ -733,7 +775,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return inertiaDeceleration;
 	}
-	
+
 	/**
 	 * The rate with which the inertial movement slows down, in pixels/second².
 	 *
@@ -746,7 +788,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.inertiaDeceleration = inertiaDeceleration;
 		return this;
 	}
-	
+
 	/**
 	 * Max speed of the inertial movement, in pixels/second.
 	 *
@@ -756,7 +798,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return inertiaMaxSpeed;
 	}
-	
+
 	/**
 	 * Max speed of the inertial movement, in pixels/second.
 	 *
@@ -769,7 +811,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.inertiaMaxSpeed = inertiaMaxSpeed;
 		return this;
 	}
-	
+
 	/**
 	 * Max speed of the inertial movement, in pixels/second.
 	 *
@@ -779,7 +821,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return easeLinearity;
 	}
-	
+
 	/**
 	 * Max speed of the inertial movement, in pixels/second.
 	 *
@@ -792,9 +834,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.easeLinearity = easeLinearity;
 		return this;
 	}
-	
+
 	/**
-	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector layers are still
+	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector
+	 * layers are still
 	 * visible.
 	 *
 	 * @return
@@ -803,9 +846,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return worldCopyJump;
 	}
-	
+
 	/**
-	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector layers are still
+	 * With this option enabled, the map tracks when you pan to another "copy" of the world and seamlessly jumps to the original one so that all overlays like markers and vector
+	 * layers are still
 	 * visible.
 	 *
 	 * @param worldCopyJump
@@ -817,9 +861,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.worldCopyJump = worldCopyJump;
 		return this;
 	}
-	
+
 	/**
-	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at normal speed, higher
+	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at
+	 * normal speed, higher
 	 * values will slow down map dragging outside bounds, and 1.0 makes the bounds fully solid, preventing the user from dragging outside the bounds.
 	 *
 	 * @return
@@ -828,9 +873,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return maxBoundsViscosity;
 	}
-	
+
 	/**
-	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at normal speed, higher
+	 * If maxBounds is set, this option will control how solid the bounds are when dragging the map around. The default value of 0.0 allows the user to drag outside the bounds at
+	 * normal speed, higher
 	 * values will slow down map dragging outside bounds, and 1.0 makes the bounds fully solid, preventing the user from dragging outside the bounds.
 	 *
 	 * @param maxBoundsViscosity
@@ -842,7 +888,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.maxBoundsViscosity = maxBoundsViscosity;
 		return this;
 	}
-	
+
 	/**
 	 * Makes the map focusable and allows users to navigate the map with keyboard arrows and +/- keys.
 	 *
@@ -852,7 +898,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return keyboard;
 	}
-	
+
 	/**
 	 * Makes the map focusable and allows users to navigate the map with keyboard arrows and +/- keys.
 	 *
@@ -865,7 +911,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.keyboard = keyboard;
 		return this;
 	}
-	
+
 	/**
 	 * Amount of pixels to pan when pressing an arrow key.
 	 *
@@ -875,7 +921,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return keyboardPanDelta;
 	}
-	
+
 	/**
 	 * Amount of pixels to pan when pressing an arrow key.
 	 *
@@ -888,7 +934,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.keyboardPanDelta = keyboardPanDelta;
 		return this;
 	}
-	
+
 	/**
 	 * Whether the map can be zoomed by using the mouse wheel. If passed 'center', it will zoom to the center of the view regardless of where the mouse was.
 	 *
@@ -898,7 +944,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return scrollWheelZoom;
 	}
-	
+
 	/**
 	 * Whether the map can be zoomed by using the mouse wheel. If passed 'center', it will zoom to the center of the view regardless of where the mouse was.
 	 *
@@ -911,7 +957,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.scrollWheelZoom = scrollWheelZoom;
 		return this;
 	}
-	
+
 	/**
 	 * Limits the rate at which a wheel can fire (in milliseconds). By default user can't zoom via wheel more often than once per 40 ms.
 	 *
@@ -921,7 +967,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return wheelDebounceTime;
 	}
-	
+
 	/**
 	 * Limits the rate at which a wheel can fire (in milliseconds). By default user can't zoom via wheel more often than once per 40 ms.
 	 *
@@ -934,7 +980,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.wheelDebounceTime = wheelDebounceTime;
 		return this;
 	}
-	
+
 	/**
 	 * How many scroll pixels (as reported by L.DomEvent.getWheelDelta) mean a change of one full zoom level. Smaller values will make wheel-zooming faster (and vice versa).
 	 *
@@ -944,7 +990,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return wheelPxPerZoomLevel;
 	}
-	
+
 	/**
 	 * How many scroll pixels (as reported by L.DomEvent.getWheelDelta) mean a change of one full zoom level. Smaller values will make wheel-zooming faster (and vice versa).
 	 *
@@ -957,7 +1003,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.wheelPxPerZoomLevel = wheelPxPerZoomLevel;
 		return this;
 	}
-	
+
 	/**
 	 * Enables mobile hacks for supporting instant taps (fixing 200ms click delay on iOS/Android) and touch holds (fired as contextmenu events).
 	 *
@@ -967,7 +1013,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return tap;
 	}
-	
+
 	/**
 	 * Enables mobile hacks for supporting instant taps (fixing 200ms click delay on iOS/Android) and touch holds (fired as contextmenu events).
 	 *
@@ -980,7 +1026,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.tap = tap;
 		return this;
 	}
-	
+
 	/**
 	 * The max number of pixels a user can shift his finger during touch for it to be considered a valid tap.
 	 *
@@ -990,7 +1036,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return tapTolerance;
 	}
-	
+
 	/**
 	 * The max number of pixels a user can shift his finger during touch for it to be considered a valid tap.
 	 *
@@ -1003,9 +1049,10 @@ public class LeafletOptions extends JavaScriptPart
 		this.tapTolerance = tapTolerance;
 		return this;
 	}
-	
+
 	/**
-	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers) were. Enabled for
+	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers)
+	 * were. Enabled for
 	 * touch-capable web browsers except for old Androids.
 	 *
 	 * @return
@@ -1014,9 +1061,10 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return touchZoom;
 	}
-	
+
 	/**
-	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers) were. Enabled for
+	 * Whether the map can be zoomed by touch-dragging with two fingers. If passed 'center', it will zoom to the center of the view regardless of where the touch events (fingers)
+	 * were. Enabled for
 	 * touch-capable web browsers except for old Androids.
 	 *
 	 * @param touchZoom
@@ -1028,7 +1076,7 @@ public class LeafletOptions extends JavaScriptPart
 		this.touchZoom = touchZoom;
 		return this;
 	}
-	
+
 	/**
 	 * Set it to false if you don't want the map to zoom beyond min/max zoom and then bounce back when pinch-zooming.
 	 *
@@ -1038,7 +1086,7 @@ public class LeafletOptions extends JavaScriptPart
 	{
 		return bounceAtZoomLimits;
 	}
-	
+
 	/**
 	 * Set it to false if you don't want the map to zoom beyond min/max zoom and then bounce back when pinch-zooming.
 	 *
@@ -1051,5 +1099,5 @@ public class LeafletOptions extends JavaScriptPart
 		this.bounceAtZoomLimits = bounceAtZoomLimits;
 		return this;
 	}
-	
+
 }

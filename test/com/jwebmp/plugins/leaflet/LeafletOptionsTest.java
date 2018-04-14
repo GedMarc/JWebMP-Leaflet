@@ -1,4 +1,4 @@
-package za.co.mmagon.jwebswing.plugins.leaflet;
+package com.jwebmp.plugins.leaflet;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
  */
 public class LeafletOptionsTest
 {
-	
+
 	public LeafletOptionsTest()
 	{
 	}
-	
+
 	@Test
 	public void testSomeMethod()
 	{
@@ -19,5 +19,5 @@ public class LeafletOptionsTest
 		bso.setDragging(true);
 		System.out.println(bso);
 	}
-	
+
 }

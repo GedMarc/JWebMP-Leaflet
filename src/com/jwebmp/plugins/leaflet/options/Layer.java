@@ -1,6 +1,23 @@
-package za.co.mmagon.jwebswing.plugins.leaflet.options;
+/*
+ * Copyright (C) 2017 Marc Magon
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+package com.jwebmp.plugins.leaflet.options;
+
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * Defines a layer available for the leaflet map
@@ -12,14 +29,14 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  */
 public abstract class Layer<J extends Layer> extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
 	 */
 	private String attribution;
-	
+
 	/**
 	 * COnstructs a new layer object
 	 */
@@ -27,7 +44,7 @@ public abstract class Layer<J extends Layer> extends JavaScriptPart
 	{
 		//Nothing needed
 	}
-	
+
 	/**
 	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
 	 *
@@ -37,7 +54,7 @@ public abstract class Layer<J extends Layer> extends JavaScriptPart
 	{
 		return attribution;
 	}
-	
+
 	/**
 	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
 	 *
@@ -51,5 +68,5 @@ public abstract class Layer<J extends Layer> extends JavaScriptPart
 		this.attribution = attribution;
 		return (J) this;
 	}
-	
+
 }
