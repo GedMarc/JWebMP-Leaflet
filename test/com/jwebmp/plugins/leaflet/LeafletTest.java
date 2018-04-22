@@ -22,7 +22,6 @@
  */
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.generics.LatitudeLongitueArray;
 import org.junit.jupiter.api.Test;
@@ -31,7 +30,6 @@ import org.junit.jupiter.api.Test;
  * @author Marc Magon
  */
 public class LeafletTest
-		extends BaseTestClass
 {
 
 	public LeafletTest()
@@ -69,7 +67,7 @@ public class LeafletTest
 	@SuppressWarnings("unchecked")
 	public void testHtml()
 	{
-		Page p = getInstance();
+		Page p = new Page();
 		Leaflet bs = new Leaflet();
 		p.getOptions()
 		 .setDynamicRender(false);

@@ -22,14 +22,14 @@
  */
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.BaseTestClass;
+import com.jwebmp.Page;
 import org.junit.jupiter.api.Test;
 
 /**
  * @author Marc Magon
  */
 public class LeafletFeatureTest
-		extends BaseTestClass
+
 {
 
 	public LeafletFeatureTest()
@@ -39,7 +39,7 @@ public class LeafletFeatureTest
 	@Test
 	public void testSomeMethod()
 	{
-		LeafletFeature leafletFeature = new LeafletFeature(getInstance().getBody());
+		LeafletFeature leafletFeature = new LeafletFeature(new Page().getBody());
 		leafletFeature.getOptions()
 		              .setBoxZoom(true);
 		System.out.println(leafletFeature.renderJavascript());
