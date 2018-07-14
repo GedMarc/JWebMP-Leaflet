@@ -12,7 +12,8 @@ import java.util.List;
  * @author Marc Magon
  * @since 10 Jun 2017
  */
-public class LatitudeLongitudeBounds extends JavaScriptPart
+public class LatitudeLongitudeBounds
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
@@ -49,7 +50,8 @@ public class LatitudeLongitudeBounds extends JavaScriptPart
 	}
 
 	/**
-	 * Represents a rectangular geographical area on a ma Max 2. All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted otherwise), so the bounds
+	 * Represents a rectangular geographical area on a ma Max 2. All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted
+	 * otherwise), so the bounds
 	 * example above can be passed like this:
 	 *
 	 * @param rectangleBounds

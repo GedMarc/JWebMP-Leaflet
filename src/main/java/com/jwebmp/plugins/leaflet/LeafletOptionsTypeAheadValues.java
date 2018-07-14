@@ -28,7 +28,8 @@ import java.util.List;
  * @author Marc Magon
  * @since 10 Jun 2017
  */
-public class LeafletOptionsTypeAheadValues extends JavaScriptPart
+public class LeafletOptionsTypeAheadValues
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;

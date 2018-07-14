@@ -30,7 +30,8 @@ import com.jwebmp.plugins.leaflet.options.Layer;
  * @author Marc Magon
  * @since 10 Jun 2017
  */
-public class InteractiveLayer<J extends InteractiveLayer> extends Layer<J>
+public class InteractiveLayer<J extends InteractiveLayer>
+		extends Layer<J>
 {
 
 	private static final long serialVersionUID = 1L;

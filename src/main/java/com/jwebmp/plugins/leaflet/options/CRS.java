@@ -15,23 +15,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.jwebmp.plugins.leaflet.options.layers;
+package com.jwebmp.plugins.leaflet.options;
+
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- * L.Marker is used to display clickable/draggable icons on the map.
+ * Abstract class that defines coordinate reference systems for projecting geographical points into pixel (screen) coordinates and back (and to coordinates in other units for WMS
+ * services). See
+ * spatial reference system. Leaflet defines the most usual CRSs by default. If you want to use a CRS not defined by default, take a look at the Proj4Leaflet plugin.
  *
  * @author Marc Magon
  * @since 10 Jun 2017
  */
-public class MarkerLayer extends InteractiveLayer<MarkerLayer>
+public class CRS
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
 
 	/*
-	 * Constructs a new MarkerLayer
+	 * Constructs a new CRS
 	 */
-	public MarkerLayer()
+	public CRS()
 	{
 		//Nothing needed
 	}

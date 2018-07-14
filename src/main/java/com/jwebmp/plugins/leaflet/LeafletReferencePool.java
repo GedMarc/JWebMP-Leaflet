@@ -28,7 +28,8 @@ import com.jwebmp.base.servlets.interfaces.ReferencePool;
  * @author Marc Magon
  * @since 09 Jun 2017
  */
-enum LeafletReferencePool implements ReferencePool
+enum LeafletReferencePool
+		implements ReferencePool
 {
 	LeafletJS(new JavascriptReference("LeafletJS", 2.3, "bower_components/leaflet/dist/leaflet.js"),
 	          new CSSReference("LeafletJS", 2.3, "bower_components/leaflet/dist/leaflet.css"));

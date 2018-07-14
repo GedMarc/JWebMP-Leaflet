@@ -20,22 +20,54 @@ package com.jwebmp.plugins.leaflet.options;
 import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- * Abstract class that defines coordinate reference systems for projecting geographical points into pixel (screen) coordinates and back (and to coordinates in other units for WMS services). See
- * spatial reference system. Leaflet defines the most usual CRSs by default. If you want to use a CRS not defined by default, take a look at the Proj4Leaflet plugin.
+ * Defines a layer available for the leaflet map
+ *
+ * @param <J>
  *
  * @author Marc Magon
  * @since 10 Jun 2017
  */
-public class CRS extends JavaScriptPart
+public abstract class Layer<J extends Layer>
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
 
-	/*
-	 * Constructs a new CRS
+	/**
+	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
 	 */
-	public CRS()
+	private String attribution;
+
+	/**
+	 * COnstructs a new layer object
+	 */
+	public Layer()
 	{
 		//Nothing needed
 	}
+
+	/**
+	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
+	 *
+	 * @return
+	 */
+	public String getAttribution()
+	{
+		return attribution;
+	}
+
+	/**
+	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".
+	 *
+	 * @param attribution
+	 *
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public J setAttribution(String attribution)
+	{
+		this.attribution = attribution;
+		return (J) this;
+	}
+
 }

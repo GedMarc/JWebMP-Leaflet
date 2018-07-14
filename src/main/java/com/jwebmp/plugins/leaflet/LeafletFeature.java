@@ -20,7 +20,7 @@ package com.jwebmp.plugins.leaflet;
 import com.jwebmp.Feature;
 import com.jwebmp.base.ComponentHierarchyBase;
 
-import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+import static com.jwebmp.utilities.StaticStrings.*;
 
 /**
  * Creates the leaflet JavaScripts required for options via the options tag
@@ -42,7 +42,6 @@ public class LeafletFeature
 		super("LeafletFeature", component);
 		component.addVariable("map_" + getID());
 	}
-
 
 	@Override
 	protected void assignFunctionsToComponent()
