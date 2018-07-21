@@ -17,10 +17,10 @@
 
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.Feature;
-import com.jwebmp.base.ComponentHierarchyBase;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.ComponentHierarchyBase;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Creates the leaflet JavaScripts required for options via the options tag

@@ -17,8 +17,8 @@
 
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.generics.LatitudeLongitueArray;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.generics.LatitudeLongitueArray;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.leaflet.options.CRS;
 import com.jwebmp.plugins.leaflet.options.LatitudeLongitudeBounds;
 import com.jwebmp.plugins.leaflet.options.Layer;

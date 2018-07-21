@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.leaflet.options;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * Defines a layer available for the leaflet map

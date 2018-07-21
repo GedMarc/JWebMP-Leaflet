@@ -22,8 +22,8 @@
  */
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.Page;
-import com.jwebmp.generics.LatitudeLongitueArray;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.generics.LatitudeLongitueArray;
 import org.junit.jupiter.api.Test;
 
 /**

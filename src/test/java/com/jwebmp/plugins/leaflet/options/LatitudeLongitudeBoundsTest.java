@@ -1,6 +1,6 @@
 package com.jwebmp.plugins.leaflet.options;
 
-import com.jwebmp.generics.LatitudeLongitueArray;
+import com.jwebmp.core.generics.LatitudeLongitueArray;
 import org.junit.jupiter.api.Test;
 
 /**
