@@ -15,4 +15,7 @@ module com.jwebmp.plugins.leaflet {
 	requires java.logging;
 
 	provides IPageConfigurator with LeafletPageConfigurator;
+	opens com.jwebmp.plugins.leaflet to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.leaflet.options to com.fasterxml.jackson.databind,com.jwebmp.core;
+	opens com.jwebmp.plugins.leaflet.options.layers to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
