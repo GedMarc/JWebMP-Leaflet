@@ -29,7 +29,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 09 Jun 2017
  */
 public class LeafletFeature
-		extends Feature<LeafletOptions, LeafletFeature>
+		extends Feature<LeafletFeature, LeafletOptions, LeafletFeature>
 {
 
 	private static final long serialVersionUID = 1L;
