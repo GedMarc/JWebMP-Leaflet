@@ -30,10 +30,14 @@ import com.jwebmp.plugins.leaflet.options.Layer;
  * @author Marc Magon
  * @since 10 Jun 2017
  */
+@SuppressWarnings("MissingClassJavaDoc")
 public class InteractiveLayer<J extends InteractiveLayer>
 		extends Layer<J>
 {
 
+	/**
+	 * Field serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
@@ -49,9 +53,11 @@ public class InteractiveLayer<J extends InteractiveLayer>
 	}
 
 	/**
+	 * Method getInteractive returns the interactive of this InteractiveLayer object.
+	 * <p>
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 *
-	 * @return
+	 * @return the interactive (type Boolean) of this InteractiveLayer object.
 	 */
 	public Boolean getInteractive()
 	{
@@ -62,9 +68,11 @@ public class InteractiveLayer<J extends InteractiveLayer>
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 *
 	 * @param interactive
+	 * 		If the map should be interactive
 	 *
-	 * @return
+	 * @return J always this
 	 */
+	@SuppressWarnings("unchecked")
 	public J setInteractive(Boolean interactive)
 	{
 		this.interactive = interactive;
