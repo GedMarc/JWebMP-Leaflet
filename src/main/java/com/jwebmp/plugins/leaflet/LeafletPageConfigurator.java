@@ -29,12 +29,42 @@ import javax.validation.constraints.NotNull;
 public class LeafletPageConfigurator
 		implements IPageConfigurator
 {
+	/**
+	 * If this configurator is enabled
+	 */
+	private static boolean enabled = true;
+
 	/*
 	 * Constructs a new LeafletPageConfigurator
 	 */
 	public LeafletPageConfigurator()
 	{
 		//Nothing needed
+	}
+
+	/**
+	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static boolean isEnabled()
+	{
+		return LeafletPageConfigurator.enabled;
+	}
+
+	/**
+	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @param mustEnable
+	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static void setEnabled(boolean mustEnable)
+	{
+		LeafletPageConfigurator.enabled = mustEnable;
 	}
 
 	@NotNull
@@ -50,5 +80,11 @@ public class LeafletPageConfigurator
 			    .addCssReference(LeafletReferencePool.LeafletJS.getCssReference());
 		}
 		return page;
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return LeafletPageConfigurator.enabled;
 	}
 }
