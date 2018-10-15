@@ -20,14 +20,14 @@ import javax.validation.constraints.NotNull;
 		pluginCategories = "mapping,mobile, interactive, layers, heatmaps, pinpoints,ui,web ui, framework",
 		pluginSubtitle = "Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms, can be extended with lots of plugins, has a beautiful, easy to use and well-documented API and a simple, readable source code that is a joy to contribute to.",
 		pluginSourceUrl = "http://leafletjs.com/index.html",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-Leaflet/wiki",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwingLeaflet",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-Leaflet/wiki",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMPLeaflet",
 		pluginIconUrl = "",
 		pluginIconImageUrl = "",
 		pluginOriginalHomepage = "http://leafletjs.com/index.html",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/Leaflet.jar/download")
 public class LeafletPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<LeafletPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
