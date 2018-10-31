@@ -32,7 +32,6 @@ public class LeafletFeature
 		extends Feature<LeafletFeature, LeafletOptions, LeafletFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Constructs a new LeafletFeature

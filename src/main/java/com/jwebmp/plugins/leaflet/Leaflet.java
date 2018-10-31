@@ -33,7 +33,7 @@ public class Leaflet
 		extends Div
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The feature for this select
 	 */
@@ -78,6 +78,14 @@ public class Leaflet
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -96,13 +104,5 @@ public class Leaflet
 		Leaflet leaflet = (Leaflet) o;
 
 		return getFeature().equals(leaflet.getFeature());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
 	}
 }

@@ -31,7 +31,6 @@ public abstract class Layer<J extends Layer>
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * String to be shown in the attribution control, describes the layer data, e.g. "© Mapbox".

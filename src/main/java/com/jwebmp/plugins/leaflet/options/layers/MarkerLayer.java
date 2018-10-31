@@ -27,7 +27,6 @@ public class MarkerLayer
 		extends InteractiveLayer<MarkerLayer>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Constructs a new MarkerLayer

@@ -32,7 +32,7 @@ public class LeafletOptionsTypeAheadValues
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Allow creating tags which are not returned by typeahead's source (default: true)
 	 * <p>

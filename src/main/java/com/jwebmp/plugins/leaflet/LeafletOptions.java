@@ -33,7 +33,6 @@ public class LeafletOptions
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Whether Paths should be rendered on a Canvas renderer. By default, all Paths are rendered in a SVG renderer.*

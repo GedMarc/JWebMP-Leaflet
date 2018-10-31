@@ -16,7 +16,6 @@ public class LatitudeLongitudeBounds
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * All Leaflet methods that accept LatLngBounds objects also accept them in a simple Array form (unless noted otherwise), so the bounds example above can be passed like this:

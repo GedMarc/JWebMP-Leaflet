@@ -38,7 +38,7 @@ public class InteractiveLayer<J extends InteractiveLayer>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * If false, the layer will not emit mouse events and will act as a part of the underlying map.
 	 */
