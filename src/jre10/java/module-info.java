@@ -1,4 +1,6 @@
 import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
+import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
 import com.jwebmp.plugins.leaflet.LeafletPageConfigurator;
 
 module com.jwebmp.plugins.leaflet {
@@ -13,9 +15,13 @@ module com.jwebmp.plugins.leaflet {
 
 	requires java.validation;
 	requires java.logging;
+	requires com.jwebmp.guicedinjection;
 
 	provides IPageConfigurator with LeafletPageConfigurator;
-	opens com.jwebmp.plugins.leaflet to com.fasterxml.jackson.databind,com.jwebmp.core;
-	opens com.jwebmp.plugins.leaflet.options to com.fasterxml.jackson.databind,com.jwebmp.core;
-	opens com.jwebmp.plugins.leaflet.options.layers to com.fasterxml.jackson.databind,com.jwebmp.core;
+	provides IGuiceScanModuleExclusions with com.jwebmp.plugins.leaflet.implementations.LeafletExclusionsModule;
+	provides IGuiceScanJarExclusions with com.jwebmp.plugins.leaflet.implementations.LeafletExclusionsModule;
+
+	opens com.jwebmp.plugins.leaflet to com.fasterxml.jackson.databind, com.jwebmp.core;
+	opens com.jwebmp.plugins.leaflet.options to com.fasterxml.jackson.databind, com.jwebmp.core;
+	opens com.jwebmp.plugins.leaflet.options.layers to com.fasterxml.jackson.databind, com.jwebmp.core;
 }
