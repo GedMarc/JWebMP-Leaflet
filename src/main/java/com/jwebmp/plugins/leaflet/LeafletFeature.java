@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
 /**
  * Creates the leaflet JavaScripts required for options via the options tag
  *
- * @author Marc Magon
+ * @author GedMarc
  * @since 09 Jun 2017
  */
 public class LeafletFeature

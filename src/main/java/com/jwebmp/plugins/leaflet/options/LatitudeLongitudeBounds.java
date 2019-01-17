@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Marc Magon
+ * @author GedMarc
  * @since 10 Jun 2017
  */
 public class LatitudeLongitudeBounds

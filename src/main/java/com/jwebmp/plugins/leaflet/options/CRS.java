@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * services). See
  * spatial reference system. Leaflet defines the most usual CRSs by default. If you want to use a CRS not defined by default, take a look at the Proj4Leaflet plugin.
  *
- * @author Marc Magon
+ * @author GedMarc
  * @since 10 Jun 2017
  */
 public class CRS

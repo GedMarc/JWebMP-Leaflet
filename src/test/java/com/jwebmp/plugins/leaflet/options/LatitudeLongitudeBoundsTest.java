@@ -4,7 +4,7 @@ import com.jwebmp.core.generics.LatitudeLongitueArray;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author Marc Magon
+ * @author GedMarc
  */
 public class LatitudeLongitudeBoundsTest
 {

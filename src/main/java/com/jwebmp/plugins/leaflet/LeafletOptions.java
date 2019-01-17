@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import com.jwebmp.plugins.leaflet.options.Layer;
 /**
  * The central class of the API — it is used to create a map on a page and manipulate it.
  *
- * @author Marc Magon
+ * @author GedMarc
  * @since 09 Jun 2017
  */
 public class LeafletOptions
