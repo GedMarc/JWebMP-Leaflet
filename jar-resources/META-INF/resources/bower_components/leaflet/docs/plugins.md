@@ -2366,7 +2366,7 @@ Change the way the user is moved around the map, by jumping to predefined/stored
 		<td>
 			<a href="https://github.com/makinacorpus/Leaflet.RestoreView">Leaflet.RestoreView</a>
 		</td><td>
-			Stores and restores map view using localStorage.
+			Stores and restores map view using enabled.
 		</td><td>
 			<a href="https://github.com/leplatrem">Mathieu Leplatre</a>
 		</td>
