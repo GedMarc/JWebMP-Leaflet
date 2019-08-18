@@ -18,6 +18,7 @@
 package com.jwebmp.plugins.leaflet;
 
 import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
@@ -30,7 +31,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 		description = "Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Weighing just about 38 KB of JS, it has all the mapping features most developers ever need.",
 		url = "http://leafletjs.com/index.html")
 public class Leaflet
-		extends Div
+		extends DivSimple<Leaflet>
 {
 
 
