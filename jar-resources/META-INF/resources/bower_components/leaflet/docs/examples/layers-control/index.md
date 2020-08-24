@@ -18,7 +18,7 @@ Let's suppose you have a bunch of layers you want to combine into a group to han
 		aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
 	    golden    = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.');
 
-Instead of adding them directly to the map, you can do the following, using the <a href="../../reference.html#layergroup">LayerGroup</a> class:
+Instead of adding them directly to the map, you can do the following, using the <a href="/reference.html#layergroup">LayerGroup</a> class:
 
 	var cities = L.layerGroup([littleton, denver, aurora, golden]);
 
@@ -52,7 +52,7 @@ var overlayMaps = {
     "Cities": cities
 };</code></pre>
 
-Now, all that's left to do is to create a [Layers Control](../../reference.html#control-layers) and add it to the map. The first argument passed when creating the layers control is the base layers object. The second argument is the overlays object. Both arguments are optional: you can pass just a base layers object by omitting the second argument, or just an overlays objects by passing `null` as the first argument. In each case, the omitted layer type will not appear for the user to select.
+Now, all that's left to do is to create a [Layers Control](/reference.html#control-layers) and add it to the map. The first argument passed when creating the layers control is the base layers object. The second argument is the overlays object. Both arguments are optional: you can pass just a base layers object by omitting the second argument, or just an overlays objects by passing `null` as the first argument. In each case, the omitted layer type will not appear for the user to select.
 
 <pre><code>L.control.layers(baseMaps, overlayMaps).addTo(map);</code></pre>
 
@@ -63,7 +63,7 @@ Also note that when using multiple base layers, only one of them should be added
 Finally, you can style the keys when you define the objects for the layers. For example, this code will make the label for the grayscale map gray:
 
 <pre><code>var baseMaps = {
-	"<span style='color: gray'>Grayscale</span>": grayscale,
+	"&lt;span style='color: gray'&gt;Grayscale&lt;/span&gt;": grayscale,
 	"Streets": streets
 };
 </code></pre>

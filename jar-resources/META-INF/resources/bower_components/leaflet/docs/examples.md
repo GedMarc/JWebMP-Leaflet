@@ -58,6 +58,13 @@ description="A tutorial on how to manage groups of layers and use the layer swit
 
 
 {% include tutorial_link.html
+page="zoom-levels/"
+thumbnail="zoom-levels/thumbnail.png"
+title="Zoom levels"
+description="A deeper look into what zoom levels are."
+%}
+
+{% include tutorial_link.html
 page="crs-simple/crs-simple.html"
 thumbnail="crs-simple/thumbnail.png"
 title="Non-geographical maps"
@@ -81,9 +88,16 @@ description="How the default map panes work to display overlays on top of tiles,
 %}
 
 
+{% include tutorial_link.html
+page="video-overlay/"
+thumbnail="video-overlay/thumbnail.gif"
+title="Showing video files"
+description="Leaflet can help you display videos somewhere on the map."
+%}
+
 ***
 
-The following tutorials cover how to create plugins for Leaflet, and are intended only for developers experienced in Javascript:
+The following tutorials cover how to create plugins for Leaflet, and are intended only for developers experienced in JavaScript:
 
 
 {% include tutorial_link.html

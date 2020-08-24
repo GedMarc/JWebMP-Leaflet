@@ -12,11 +12,11 @@ bodyclass: download-page
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><a href="http://cdn.leafletjs.com/leaflet/v1.0.3/leaflet.zip">Leaflet 1.0.3</a></td>
-		<td>Stable version, released on January 23, 2017.</td>
+		<td><a href="http://cdn.leafletjs.com/leaflet/v1.5.1/leaflet.zip">Leaflet 1.5.1</a></td>
+		<td>Stable version, released on May 8, 2019.</td>
 	</tr>
 	<tr>
-		<td><a href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.zip">Leaflet 1.1-dev</a></td>
+		<td><a href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.zip">Leaflet 1.6-dev</a></td>
 		<td>In-progress version, developed on the <code>master</code> branch.</td>
 	</tr>
 	<tr>
@@ -30,27 +30,44 @@ bodyclass: download-page
 Note that the master version can contain incompatible changes,
 so please read the changelog carefully when upgrading to it.
 
+[Get notified of new Leaflet releases](https://github.com/Leaflet/Leaflet/issues/6295)
+
 ### Using a Hosted Version of Leaflet
 
-The latest stable Leaflet release is hosted on a CDN &mdash; to start using
+The latest stable Leaflet release is available on several CDN's &mdash; to start using
 it straight away, place this in the `head` of your HTML code:
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@{{ site.latest_leaflet_version}}/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@{{ site.latest_leaflet_version}}/dist/leaflet.js"></script>
+
+To avoid potential security problems, we recommend and encourage enabling
+[subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+when using Leaflet from a CDN:
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{ site.latest_leaflet_version}}/dist/leaflet.css"
+      integrity="{{site.integrity_hash_css}}"
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@{{ site.latest_leaflet_version}}/dist/leaflet.js"
+      integrity="{{site.integrity_hash_uglified}}"
+      crossorigin=""></script>
+
+Leaflet is available on the following free CDN's:  [unpkg](https://unpkg.com/leaflet/dist/), [cdnjs](https://cdnjs.com/libraries/leaflet), [jsDelivr](https://www.jsdelivr.com/package/npm/leaflet?path=dist)
+
+_Disclaimer: these services are external to Leaflet; for questions or support, please contact them directly._
 
 ### Using a Downloaded Version of Leaflet
 
 Inside the archives downloaded from the above links, you will see four things:
 
 - `leaflet.js` - This is the minified Leaflet JavaScript code.
-- `leaflet-src.js` - This is the readable, unminified Leaflet JavaScript, which is sometimes helpful for debugging.
+- `leaflet-src.js` - This is the readable, unminified Leaflet JavaScript, which is sometimes helpful for debugging. <small>(The integrity hash for this file is <nobr><tt>{{site.integrity_hash_source}}</tt></nobr>)</small>
 - `leaflet.css` - This is the stylesheet for Leaflet.
 - `images` - This is a folder that contains images referenced by `leaflet.css`. It must be in the same directory as `leaflet.css`.
 
 Unzip the downloaded archive to your website's directory and add this to the `head` of your HTML code:
 
     <link rel="stylesheet" href="/path/to/leaflet.css" />
-    <script src="/path/to/leaflet.js"></script> <!-- or use leaflet-src.js --!>
+    <script src="/path/to/leaflet.js"></script>
 
 ### Using a JavaScript package manager
 
@@ -74,11 +91,10 @@ which installs easily and works well across all major platforms.
 Here are the steps to set it up:
 
  1. [Download and install Node](http://nodejs.org)
- 2. Run the following commands in the command line:
+ 2. Run the following command in the command line:
 
- <pre><code>npm install -g jake
-npm install</code></pre>
+ <pre><code>npm install</code></pre>
 
-Now that you have everything installed, run `jake build` inside the Leaflet directory.
+Now that you have everything installed, run `npm run build` inside the Leaflet directory.
 This will combine and compress the Leaflet source files, saving the build to the `dist` folder.
 
