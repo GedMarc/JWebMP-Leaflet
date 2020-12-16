@@ -17,7 +17,6 @@
 
 package com.jwebmp.plugins.leaflet;
 
-import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.plugins.ComponentInformation;
 

@@ -30,7 +30,7 @@ import com.jwebmp.plugins.leaflet.options.Layer;
  * @since 09 Jun 2017
  */
 public class LeafletOptions
-		extends JavaScriptPart
+		extends JavaScriptPart<LeafletOptions>
 {
 
 

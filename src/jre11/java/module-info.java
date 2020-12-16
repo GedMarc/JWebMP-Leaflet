@@ -1,3 +1,5 @@
+import com.jwebmp.plugins.leaflet.implementations.LeafletInclusionModule;
+
 module com.jwebmp.plugins.leaflet {
 
 	exports com.jwebmp.plugins.leaflet;
@@ -13,7 +15,8 @@ module com.jwebmp.plugins.leaflet {
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.leaflet.LeafletPageConfigurator;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.leaflet.implementations.LeafletExclusionsModule;
-
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with LeafletInclusionModule;
+	
 	opens com.jwebmp.plugins.leaflet to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.leaflet.options to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.leaflet.options.layers to com.fasterxml.jackson.databind, com.jwebmp.core;

@@ -31,7 +31,7 @@ import com.jwebmp.plugins.leaflet.options.Layer;
  * @since 10 Jun 2017
  */
 @SuppressWarnings("MissingClassJavaDoc")
-public class InteractiveLayer<J extends InteractiveLayer>
+public class InteractiveLayer<J extends InteractiveLayer<J>>
 		extends Layer<J>
 {
 

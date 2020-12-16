@@ -32,8 +32,8 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
 public class LeafletFeature
 		extends Feature<LeafletFeature, LeafletOptions, LeafletFeature>
 {
-
-
+	
+	
 	/*
 	 * Constructs a new LeafletFeature
 	 */
@@ -42,13 +42,14 @@ public class LeafletFeature
 		super("LeafletFeature", component);
 		component.addVariable("map_" + getID());
 	}
-
+	
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery("map_" + getComponent().getID() + " = L.map(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery("map_" + getComponent().asBase()
+		                                .getID() + " = L.map(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
-
+	
 	/**
 	 * Returns the options
 	 *
@@ -63,5 +64,5 @@ public class LeafletFeature
 		}
 		return super.getOptions();
 	}
-
+	
 }

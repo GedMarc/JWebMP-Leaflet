@@ -29,7 +29,7 @@ import java.util.List;
  * @since 10 Jun 2017
  */
 public class LeafletOptionsTypeAheadValues
-		extends JavaScriptPart
+		extends JavaScriptPart<LeafletOptionsTypeAheadValues>
 {
 
 

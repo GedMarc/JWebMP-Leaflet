@@ -13,7 +13,7 @@ import java.util.List;
  * @since 10 Jun 2017
  */
 public class LatitudeLongitudeBounds
-		extends JavaScriptPart
+		extends JavaScriptPart<LatitudeLongitudeBounds>
 {
 
 

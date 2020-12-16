@@ -28,7 +28,7 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * @since 10 Jun 2017
  */
 public class CRS
-		extends JavaScriptPart
+		extends JavaScriptPart<CRS>
 {
 
 

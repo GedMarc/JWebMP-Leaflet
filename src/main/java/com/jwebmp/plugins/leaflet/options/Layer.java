@@ -27,8 +27,8 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * @author GedMarc
  * @since 10 Jun 2017
  */
-public abstract class Layer<J extends Layer>
-		extends JavaScriptPart
+public abstract class Layer<J extends Layer<J>>
+		extends JavaScriptPart<J>
 {
 
 
