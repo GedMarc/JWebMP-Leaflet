@@ -67,7 +67,7 @@ public class LeafletTest
 	@SuppressWarnings("unchecked")
 	public void testHtml()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		Leaflet bs = new Leaflet();
 		p.getOptions()
 		 .setDynamicRender(false);
