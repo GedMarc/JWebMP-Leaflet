@@ -7,7 +7,7 @@ module com.jwebmp.plugins.leaflet {
 	exports com.jwebmp.plugins.leaflet.options.layers;
 
 	requires com.jwebmp.core;
-	requires com.guicedee.logmaster;
+	
 
 	requires jakarta.validation;
 	requires java.logging;
